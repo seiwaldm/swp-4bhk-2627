@@ -48,3 +48,19 @@ Webdevelopment hat im Laufe der letzten rund 35 Jahre einige Evolutionsstufen du
 VibeCoding passiert in VS-Code in erster Linie über die neu eingeführte Agent View. Dort können alle Anpassungen der "Coding Harness" vorgenommen werden. Wir können unseren Harmess mit verschiedenen Methoden anpassen:
 
 - MCP-Server MCP steht für _Model Context Protocoll_. Es ist ein von Anthropic entwickelter Standard. Mit Hilfe von MCP können ChatBots/LLMs (_Large Language Models_) auf zusätzliche Tools zugreifen, die sie zu Experten in einem bestimmten Themenbereich machen.
+
+---
+
+# Frontend-Enwicklung
+
+## Ordnerstruktur
+
+Die Ordnerstruktur einer typischen Frontend-Anwendung sieht in etwa so aus:
+
+![Ordnerstruktur einer Svelte-Anwendung](image.png)
+
+Der Ordner `.vscode` enthält Einstellungen für den VS-Code-Editor. Der Ordner `node_modules` enthält die Abhängigkeiten (_dependencies_) der Anwendung. Das sind jene Pakete, die bei der Entwicklung (_build time_) und/oder bei der Ausführung (_runtime_) der Anwendung benötigt werden. Alle Abhängigkeiten sind in der Datei `package.json`aufgelistet. Außerdem enthält die Datei `package.json` Informationen über die Anwendung selbst (Name, Version, Autor, Lizenz, etc.) und Skripte, die bestimmte Aufgaben automatisieren (z.B. Starten der Anwendung, Testen der Anwendung, Erstellen einer Produktionsversion der Anwendung). Der Ordner `public` enthält statische Dateien (z.B. Bilder, Fonts, Icons), die direkt vom Browser unter dem jeweiligen Pfad geladen werden können.
+
+![Unterstuktur des src-Ordners](image-1.png)
+
+Der Ordner `src`enthält den Quellcode der Anwendung. Die Dateien `app.css`, `App.svelte` und `main.ts` sind die Einstiegspunkte der Anwendung (in diesem Fall eine SPA). Sie werden vom Browser als erstes geladen, wenn die entsprechende Website aufgerufen wird. Die Datei `app.css` enthält die globalen CSS-Stile. Die Datei `App.svelte` ist die Hauptkomponente, die andere Komponenten importiert und in der Benutzeroberfläche anzeigt. Die Datei `main.ts` ist der Einstiegspunkt für das JavaScript/TypeScript. Sie initialisiert die Anwendung in der `App.svelte` und bindet sie an das HTML-Dokument (`index.html` im Root-Ordner).
